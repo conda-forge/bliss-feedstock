@@ -5,7 +5,7 @@
 
 package:
   name: {{ name|lower }}
-  version: {{ full_version.replace("-", "_") }}
+  version: {{ version }}.0{{ version_patch.replace("-", "_") }}
 
 source:
   url: https://github.com/mkoeppe/bliss/releases/download/sage_package%2F{{ version }}{{ version_patch.replace(".", "%2B") }}/bliss-{{ full_version }}.tar.gz
