@@ -16,7 +16,7 @@ index 01ed093..91d8ac2 100644
  endif(USE_GMP)
  set_target_properties(bliss-executable PROPERTIES OUTPUT_NAME bliss)
 +
-+set_target_properties(bliss PROPERTIES PUBLIC_HEADER "src/abstractgraph.hh src/bignum.hh src/defs.hh src/digraph.hh src/graph.hh src/heap.hh src/kqueue.hh src/orbit.hh src/partition.hh src/stats.hh src/timer.hh src/uintseqhash.hh src/utils.hh")
++set_target_properties(bliss PROPERTIES PUBLIC_HEADER src/abstractgraph.hh src/bignum.hh src/defs.hh src/digraph.hh src/graph.hh src/heap.hh src/kqueue.hh src/orbit.hh src/partition.hh src/stats.hh src/timer.hh src/uintseqhash.hh src/utils.hh)
 +
 +include(GNUInstallDirs)
 +install(TARGETS bliss-executable)
