@@ -1,0 +1,26 @@
+From 380d6ab0a6fda94c122996481afbf1875f77acf5 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Julian=20R=C3=BCth?= <julian.rueth@fsfe.org>
+Date: Wed, 6 Dec 2023 00:33:38 +0200
+Subject: [PATCH] Add install target to cmake setup
+
+---
+ CMakeLists.txt | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 01ed093..91d8ac2 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -62,3 +62,9 @@ if(USE_GMP)
+   target_link_libraries(bliss-executable ${GMP_LIBRARIES})
+ endif(USE_GMP)
+ set_target_properties(bliss-executable PROPERTIES OUTPUT_NAME bliss)
++
++set_target_properties(bliss PROPERTIES PUBLIC_HEADER src/abstractgraph.hh src/bignum.hh src/defs.hh src/digraph.hh src/graph.hh src/heap.hh src/kqueue.hh src/orbit.hh src/partition.hh src/stats.hh src/timer.hh src/uintseqhash.hh src/utils.hh)
++
++include(GNUInstallDirs)
++install(TARGETS bliss-executable)
++install(TARGETS bliss PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/bliss)
+-- 
+2.43.0
+

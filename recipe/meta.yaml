@@ -8,6 +8,8 @@ package:
 source:
   url: https://users.aalto.fi/~tjunttil/bliss/downloads/bliss-{{ version }}.zip
   sha256: acc8b98034f30fad24c897f365abd866c13d9f1bb207e398d0caf136875972a4
+  patches:
+    - install.patch
 
 build:
   number: 0
