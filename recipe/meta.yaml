@@ -1,16 +1,13 @@
 {% set name = "bliss" %}
-{% set version = "0.73" %}
-{% set version_patch = ".debian-1.sage-2016-08-02" %}
-{% set full_version = version + version_patch %}
+{% set version = "0.77" %}
 
 package:
   name: {{ name|lower }}
-  version: {{ version }}.0{{ version_patch.replace("-", "_") }}
+  version: {{ version }}
 
 source:
-  url: https://github.com/mkoeppe/bliss/releases/download/sage_package%2F{{ version }}{{ version_patch.replace(".", "%2B") }}/bliss-{{ full_version }}.tar.gz
-# url: http://www.tcs.hut.fi/Software/bliss/bliss-{{ version }}.zip
-  sha256: 77ae36f3fe4c071031b438b23d9019152dc2dc42afb4b6acfe4cb73209d2d979
+  url: https://users.aalto.fi/~tjunttil/bliss/downloads/bliss-{{ version }}.zip
+  sha256: acc8b98034f30fad24c897f365abd866c13d9f1bb207e398d0caf136875972a4
 
 build:
   number: 0
