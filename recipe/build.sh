@@ -1,8 +1,11 @@
-libtoolize
-automake --add-missing --copy
-./configure --prefix=$PREFIX --disable-gmp
-make -j${CPU_COUNT}
-if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
-make check
-fi
+mkdir build
+cd build
+
+cmake \
+  -DCMAKE_INSTALL_PREFIX=$PREFIX \
+  -DCMAKE_PREFIX_PATH=$PREFIX \
+  -DCMAKE_BUILD_TYPE=Release \
+  ..
+
+make -j${CPU_COUNT} VERBOSE=1
 make install

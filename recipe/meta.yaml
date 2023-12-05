@@ -16,9 +16,7 @@ build:
 requirements:
   build:
     - {{ compiler('cxx') }}
-    - libtool
-    - autoconf
-    - automake
+    - cmake
     - make
 
 test:
