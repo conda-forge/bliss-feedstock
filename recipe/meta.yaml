@@ -12,7 +12,7 @@ source:
     - install.patch
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win]
   run_exports:
     - {{ pin_subpackage("bliss", max_pin="x.x") }}
